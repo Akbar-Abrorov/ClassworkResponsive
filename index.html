@@ -10,6 +10,15 @@
         body {
             background-color: #f5f5f5;
         }
+
+        .ng {
+            display: none;
+        }
+        .niga {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 350px;
+        }
         .navbar {
             background-color: white;
             padding: 15px;
@@ -41,9 +50,52 @@
             width: 100%;
             border-radius: 12px;
         }
+        .f{
+            display: none;
+            gap:20px;
+        }
+        @media (max-width: 1100px) {
+            .f{
+                display: flex;
+            }
+            .ng {
+                display: none;
+            }
+            .niga {
+                display: none;
+            }
+            #gg{
+                display: block;
+                margin-left: 100px;
+            }
+            .filter-btn{
+                width: 100%;
+            }
+            #aziz{
+                width: 100%;
+            }
+        }
 
-        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .ng {
+                display: block;
+            }
+            .niga {
+                display: none;
+            }
+            .f{
+                display: none;
+            }
         @media (max-width: 700px) {
+            .f{
+                display: flex;
+            }
+            .ng {
+                display: none;
+            }
+            .niga {
+                display: none;
+            }
             .filter-btn {
                 width: 80px;
                 padding: 6px 12px;
@@ -57,6 +109,15 @@
         }
 
         @media (max-width: 500px) {
+            .f{
+                display: none;
+            }
+            .ng {
+                display: block;
+            }
+            .niga {
+                display: none;
+            }
             .navbar {
                 flex-direction: column;
                 align-items: center;
@@ -73,21 +134,39 @@
             .nft-card {
                 margin-bottom: 10px;
             }
-        }
+        }}
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex flex-wrap justify-content-between">
             <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo" height="40"></a>
-            <div class="search-box d-flex align-items-center border-end pe-3">
-                <input type="text" class="form-control" placeholder="Search...">
-                <i class="fa fa-search ms-2"></i>
+            <img src="list.svg" class="ng">
+            <div class="f" >
+                <div class="search-box d-flex align-items-center border-end pe-3">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <i class="fa fa-search ms-2"></i>
+                </div>
+                <button type="button" class="btn btn-outline-dark" id="gg">Create +</button>
+                <button type="button" class="btn btn-primary position-relative rounded-circle" style="height: 40px; cursor: pointer;">
+                  <img src="chat.svg" class="lk">
+                  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                    <span class="visually-hidden">New alerts</span>
+                  </span>
+                </button>
+                <img src="list.svg" class="ngg">
             </div>
-            <div>
-                <button class="btn btn-outline-dark">Discover</button>
-                <button class="btn btn-outline-dark">Feed</button>
-                <button class="btn btn-dark">Connect Wallet</button>
+            <div class="niga">
+                <div class="search-box d-flex align-items-center border-end pe-3">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <i class="fa fa-search ms-2"></i>
+                </div>
+                <div>
+                    <button class="btn btn-outline-dark">Discover</button>
+                    <button class="btn btn-outline-dark">Feed</button>
+                    <button class="btn btn-dark">Connect Wallet</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -101,7 +180,7 @@
                 <button class="filter-btn me-2" disabled>Offer</button>
                 <button class="filter-btn active">Buy now</button>
             </div>
-            <div class="col-md-6 col-12">
+            <div class="col-md-6 col-12" id="aziz">
                 <h5>Price</h5>
                 <input type="number" placeholder="Min" class="form-control d-inline w-25 me-2">
                 <input type="number" placeholder="Max" class="form-control d-inline w-25 me-2">
